@@ -1,4 +1,4 @@
-ESLint Plugin Skeleton
+# ESLint Plugin Skeleton
 
 Bare bone eslint plugin for easy extensibility.
 
