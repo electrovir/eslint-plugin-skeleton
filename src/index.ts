@@ -3,7 +3,7 @@ import {RuleDefinitions, ExportRuleDefinitions} from './rule';
 
 export const allRules = [noLiteral];
 
-const definitions: RuleDefinitions = allRules.reduce((accum: RuleDefinitions, rule) => {
+export const rules: RuleDefinitions = allRules.reduce((accum: RuleDefinitions, rule) => {
     if (accum[rule.ruleName]) {
         throw new Error(`Duplicate rule name: "${rule.ruleName}"`);
     } else {
@@ -11,5 +11,3 @@ const definitions: RuleDefinitions = allRules.reduce((accum: RuleDefinitions, ru
     }
     return accum;
 }, {});
-
-export default {rules: definitions} as ExportRuleDefinitions;
