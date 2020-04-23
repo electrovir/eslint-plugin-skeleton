@@ -5,8 +5,8 @@
     "main": "index.js",
     "private": true,
     "scripts": {
-        "test": "ts-node src/index.ts",
-        "format": "prettier *.json .*.json **/*.ts --write",
+        "test": "ts-node ./src/rules/no-literal.test.ts",
+        "format": "prettier *.json .*.json **/*.ts **/*.json --write",
         "compile": "rm -rf dist && tsc"
     },
     "repository": {
@@ -20,10 +20,13 @@
     },
     "homepage": "https://github.com/electrovir/eslint-plugin-skeleton#readme",
     "devDependencies": {
-        "prettier": "2.0.5",
-        "ts-node": "8.9.0"
+        "@types/eslint": "^6.8.0",
+        "eslint": "^6.8.0",
+        "prettier": "^2.0.5",
+        "ts-node": "^8.9.0",
+        "typescript": "^3.8.3"
     },
-    "dependencies": {
-        "typescript": "3.8.3"
+    "peerDependencies": {
+        "eslint": "^6.8.0"
     }
 }
