@@ -1,0 +1,29 @@
+{
+    "name": "eslint-plugin-skeleton",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "private": true,
+    "scripts": {
+        "test": "ts-node src/index.ts",
+        "format": "prettier *.json .*.json **/*.ts --write",
+        "compile": "rm -rf dist && tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/electrovir/eslint-plugin-skeleton.git"
+    },
+    "author": "electrovir",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/electrovir/eslint-plugin-skeleton/issues"
+    },
+    "homepage": "https://github.com/electrovir/eslint-plugin-skeleton#readme",
+    "devDependencies": {
+        "prettier": "2.0.5",
+        "ts-node": "8.9.0"
+    },
+    "dependencies": {
+        "typescript": "3.8.3"
+    }
+}
