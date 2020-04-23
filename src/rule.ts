@@ -12,4 +12,3 @@ export type EsLintRule = {
 };
 
 export type RuleDefinitions = {[name: string]: Rule.RuleModule};
-export type ExportRuleDefinitions = {rules: RuleDefinitions};

@@ -1,5 +1,5 @@
-import {noLiteral} from './rules/no-literal';
-import {RuleDefinitions, ExportRuleDefinitions} from './rule';
+import {noLiteral} from './rules/no-literal.rule';
+import {RuleDefinitions} from './rule';
 
 export const allRules = [noLiteral];
 
