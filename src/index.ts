@@ -1,7 +1,6 @@
-import {noLiteral} from './rules/no-literal.rule';
 import {RuleDefinitions} from './rule';
-
-export const allRules = [noLiteral];
+import {ConfigDefinitions} from './config';
+import {allRules, allConfigs} from './all';
 
 export const rules: RuleDefinitions = allRules.reduce((accum: RuleDefinitions, rule) => {
     if (accum[rule.ruleName]) {
@@ -11,3 +10,14 @@ export const rules: RuleDefinitions = allRules.reduce((accum: RuleDefinitions, r
     }
     return accum;
 }, {});
+
+export const configs: ConfigDefinitions = allConfigs.reduce((accum: ConfigDefinitions, config) => {
+    if (accum[config.configName]) {
+        throw new Error(`Duplicate config name: "${config.configName}"`);
+    } else {
+        accum[config.configName] = config.eslint;
+    }
+    return accum;
+}, {});
+
+console.log(configs);

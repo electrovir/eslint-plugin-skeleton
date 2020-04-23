@@ -1,14 +1,14 @@
 import {Rule, RuleTester} from 'eslint';
 
-export type EsLintRuleTests = {
+export type EslintRuleTests = {
     valid?: (string | RuleTester.ValidTestCase)[];
     invalid?: RuleTester.InvalidTestCase[];
 };
 
-export type EsLintRule = {
+export type EslintRule = {
     eslint: Rule.RuleModule;
     ruleName: string;
-    tests: EsLintRuleTests;
+    tests: EslintRuleTests;
 };
 
 export type RuleDefinitions = {[name: string]: Rule.RuleModule};

@@ -1,6 +1,6 @@
 import {RuleTester} from 'eslint';
-import {EsLintRule} from './rule';
-import {allRules} from './index';
+import {EslintRule} from './rule';
+import {allRules} from './all';
 
 const tester = new RuleTester({parserOptions: {ecmaVersion: 2017}});
 
@@ -9,11 +9,11 @@ type TestResult = {
     passed: boolean;
 };
 
-export function testRule(rule: EsLintRule): void {
+export function testRule(rule: EslintRule): void {
     tester.run(rule.ruleName, rule.eslint, rule.tests);
 }
 
-export function testRules(rules: EsLintRule[]): TestResult[] {
+export function testRules(rules: EslintRule[]): TestResult[] {
     return rules.map(rule => {
         const result = {
             passed: true,

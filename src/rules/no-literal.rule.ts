@@ -1,6 +1,6 @@
-import {EsLintRule} from '../rule';
+import {EslintRule} from '../rule';
 
-export const noLiteral: EsLintRule = {
+export const noLiteral: EslintRule = {
     eslint: {
         create(context) {
             return {
