@@ -1,13 +1,13 @@
 {
     "name": "eslint-plugin-skeleton",
     "version": "1.0.0",
-    "description": "",
+    "description": "Bare bone eslint plugin for easy extensibility",
     "main": "index.js",
     "private": true,
     "scripts": {
         "test": "ts-node ./src/test.ts",
         "format": "prettier *.json .*.json **/*.ts **/*.json --write",
-        "compile": "rm -rf dist && tsc"
+        "prepublishOnly": " npm test && rm -rf dist && tsc && npm run format"
     },
     "repository": {
         "type": "git",
@@ -20,7 +20,6 @@
     },
     "homepage": "https://github.com/electrovir/eslint-plugin-skeleton#readme",
     "devDependencies": {
-        "@types/eslint": "^6.8.0",
         "@types/node": "^13.13.2",
         "eslint": "^6.8.0",
         "prettier": "^2.0.5",
@@ -29,5 +28,8 @@
     },
     "peerDependencies": {
         "eslint": "^6.8.0"
+    },
+    "dependencies": {
+        "@types/eslint": "^6.8.0"
     }
 }
