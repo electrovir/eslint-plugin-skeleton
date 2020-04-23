@@ -5,7 +5,7 @@
     "main": "index.js",
     "private": true,
     "scripts": {
-        "test": "ts-node ./src/rules/no-literal.test.ts",
+        "test": "ts-node ./src/test.ts",
         "format": "prettier *.json .*.json **/*.ts **/*.json --write",
         "compile": "rm -rf dist && tsc"
     },
@@ -21,6 +21,7 @@
     "homepage": "https://github.com/electrovir/eslint-plugin-skeleton#readme",
     "devDependencies": {
         "@types/eslint": "^6.8.0",
+        "@types/node": "^13.13.2",
         "eslint": "^6.8.0",
         "prettier": "^2.0.5",
         "ts-node": "^8.9.0",
