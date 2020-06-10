@@ -58,6 +58,6 @@ See the [relevant ESLint documentation for config details](https://eslint.org/do
 2. Change [`name` in `package.json`](https://github.com/electrovir/eslint-plugin-skeleton/blob/master/package.json) to reflect your new plugin name (make sure to include the `eslint-plugin` prefix).
 3. Make other necessary changes to [`package.json`](https://github.com/electrovir/eslint-plugin-skeleton/blob/master/package.json).
     - Change the `private`, `repository`, `homepage`, `bugs`, `author`, `license`, etc. properties as needed.
-4. Add or remove any rules or configs in `src` as explained in the sections above.
+4. Add or remove any rules or configs in `src` as explained in the [config](#how-to-add-configs) and [rules](#how-to-add-rules) sections above.
 5. Test using `npm run full-test` as explained in the Testing section above.
-6. Publish new package to npm.
+6. Publish new package to npm: `npm publish`
