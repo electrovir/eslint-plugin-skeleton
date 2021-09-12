@@ -1,6 +1,6 @@
-import {RuleDefinitions} from './rule';
+import {allConfigs, allRules} from './all';
 import {ConfigDefinitions} from './config';
-import {allRules, allConfigs} from './all';
+import {RuleDefinitions} from './rule';
 
 export const rules: RuleDefinitions = allRules.reduce((accum: RuleDefinitions, rule) => {
     if (accum[rule.ruleName]) {

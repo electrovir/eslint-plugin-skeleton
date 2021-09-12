@@ -1,36 +1,38 @@
 {
     "name": "eslint-plugin-skeleton",
-    "version": "1.1.0",
-    "description": "Bare bone eslint plugin for easy extensibility",
-    "main": "dist/index.js",
     "private": true,
-    "scripts": {
-        "test": "ts-node ./src/test.ts",
-        "format": "prettier *.json .*.json **/*.ts **/*.json --write",
-        "prepare": "rm -rf dist && tsc",
-        "full-test": "npm run prepare && cd ../tester-for-eslint-plugin && npm run lint"
+    "description": "Bare bone eslint plugin for easy extensibility",
+    "homepage": "https://github.com/electrovir/eslint-plugin-skeleton#readme",
+    "bugs": {
+        "url": "https://github.com/electrovir/eslint-plugin-skeleton/issues"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/electrovir/eslint-plugin-skeleton.git"
     },
-    "author": "electrovir",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/electrovir/eslint-plugin-skeleton/issues"
+    "author": {
+        "name": "electrovir",
+        "url": "https://github.com/electrovir"
     },
-    "homepage": "https://github.com/electrovir/eslint-plugin-skeleton#readme",
-    "devDependencies": {
-        "@types/node": "^13.13.2",
-        "eslint": "^6.8.0",
-        "prettier": "^2.0.5",
-        "ts-node": "^8.9.0",
-        "typescript": "^3.8.3"
-    },
-    "peerDependencies": {
-        "eslint": "^6.8.0"
+    "main": "dist/index.js",
+    "scripts": {
+        "format": "virmator format",
+        "prepublishOnly": "npm run test:full",
+        "spellcheck": "virmator spellcheck",
+        "test:full": "npm test && npm run spellcheck && virmator format check",
+        "test": "ts-node ./src/test.ts"
     },
     "dependencies": {
-        "@types/eslint": "^6.8.0"
+        "@types/eslint": "^7.28.0"
+    },
+    "devDependencies": {
+        "@types/node": "^16.9.1",
+        "eslint": "^7.32.0",
+        "ts-node": "^10.2.1",
+        "virmator": "^1.1.12"
+    },
+    "peerDependencies": {
+        "eslint": "^7.32.0"
     }
 }

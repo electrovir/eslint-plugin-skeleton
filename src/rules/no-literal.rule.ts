@@ -4,7 +4,7 @@ export const noLiteral: EslintRule = {
     eslint: {
         create(context) {
             return {
-                Literal: node => {
+                Literal: (node) => {
                     context.report({
                         message: '😿',
                         node,

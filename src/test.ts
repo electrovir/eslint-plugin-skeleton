@@ -1,6 +1,6 @@
 import {RuleTester} from 'eslint';
-import {EslintRule} from './rule';
 import {allRules} from './all';
+import {EslintRule} from './rule';
 
 const tester = new RuleTester({parserOptions: {ecmaVersion: 2017}});
 
@@ -14,7 +14,7 @@ export function testRule(rule: EslintRule): void {
 }
 
 export function testRules(rules: EslintRule[]): TestResult[] {
-    return rules.map(rule => {
+    return rules.map((rule) => {
         const result = {
             passed: true,
             ruleName: rule.ruleName,
@@ -29,15 +29,17 @@ export function testRules(rules: EslintRule[]): TestResult[] {
 }
 
 // when script is directly executed
-if (!module.parent) {
+if (require.main === module) {
     const args = process.argv.slice(2);
     const testIndex: number = Number(args[0]);
 
-    const rulesToTest = isNaN(testIndex) ? allRules : [allRules[testIndex]];
-
-    const results = testRules(rulesToTest);
+    const ruleToTest = allRules[testIndex];
+    const results = testRules(ruleToTest ? [ruleToTest] : allRules);
 
     console.log(
-        '\t' + results.map(result => `${result.passed ? 'Passed' : 'Failed'}:\t${result.ruleName}`).join('\t\n'),
+        '\t' +
+            results
+                .map((result) => `${result.passed ? 'Passed' : 'Failed'}:\t${result.ruleName}`)
+                .join('\t\n'),
     );
 }
